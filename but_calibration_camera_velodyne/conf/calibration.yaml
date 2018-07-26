@@ -1,0 +1,6 @@
+but_calibration_camera_velodyne:
+  camera_frame_topic: /kinect2/hd/image_color
+  camera_info_topic: /kinect2/hd/camera_info
+  marker: {circles_distance: 0.3, circles_radius: 0.1}
+  velodyne_topic: /velodyne_points
+
