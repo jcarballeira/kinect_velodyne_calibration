@@ -137,18 +137,18 @@ void pointCloudCallback(const sensor_msgs::PointCloud2ConstPtr& msg)
   sensor_msgs::PointCloud2 color_cloud2;
   toROSMsg(color_cloud, color_cloud2);
   color_cloud2.header = msg->header;
-
-  //pub.publish(color_cloud2);
    sensor_msgs::PointCloud2 pcloud2;
+
+  pub.publish(color_cloud2);
+  
   /*aux_class listener;
- 
   pcl_ros::transformPointCloud	(std::string("kinect2_rgb_optical_frame"), color_cloud2, pcloud2, listener.frame_listener);*/
 
-  tf::Quaternion q(0.0, 0.0, 0.0, 1);
+  /*tf::Quaternion q(0.0, 0.0, 0.0, 1);
   tf::Vector3 t(0.141994, -0.0488426, 0.0160775); 
   tf::Transform transform(q,t);
-  pcl_ros::transformPointCloud	(&color_cloud2, &pcloud2,&transform);
-  pub.publish(pcloud2);
+  pcl_ros::transformPointCloud	(color_cloud2, pcloud2, transform);
+  pub.publish(pcloud2);*/
 
 }
 
