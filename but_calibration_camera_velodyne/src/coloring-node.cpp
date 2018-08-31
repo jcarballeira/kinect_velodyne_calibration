@@ -130,7 +130,7 @@ void pointCloudCallback(const sensor_msgs::PointCloud2ConstPtr& msg)
 
   color_cloud=lev_dex(color_cloud);
   
-  // reverse axix switching:
+  // reverse axis switching:
   Eigen::Affine3f transf = getTransformation(0, 0, 0, -M_PI / 2, 0, 0);
   transformPointCloud(color_cloud, color_cloud, transf);
 
